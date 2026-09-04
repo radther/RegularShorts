@@ -142,6 +142,12 @@ and no content scripts elsewhere.
 | `webRequestBlocking` | Redirect a request before it is sent (still supported in Firefox Manifest V3) |
 | `*.youtube.com` host permission | Scope all behavior to YouTube only |
 
+## Data collection
+
+The extension collects, transmits, and stores **no data**. This is declared to
+AMO via `browser_specific_settings.gecko.data_collection_permissions` with
+`required: ["none"]`, as required for all new Firefox extensions.
+
 ## Files
 
 - `manifest.json` — Manifest V3, Firefox-specific settings.
