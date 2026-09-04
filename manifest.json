@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Regular Shorts",
+  "version": "1.0.0",
+  "description": "Redirects YouTube Shorts to the standard YouTube player.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://youtube.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "regular-shorts@example.org",
+      "strict_min_version": "115.0"
+    }
+  }
+}
